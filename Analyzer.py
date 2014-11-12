@@ -31,7 +31,7 @@ class Analyzer(object):
                     max(xc + dim - xm, yc + dim - ym, 0)))
         _tmp = np.lib.pad(_in, padding, 'constant')
 
-        return _tmp[yc-dim+padding:yc+dim, xc-dim:xc+dim+padding]
+        return _tmp[yc-dim+padding:yc+dim, xc-dim+padding:xc+dim]
 
     # Feed forward through our neural net
     def predict(self, _in):
